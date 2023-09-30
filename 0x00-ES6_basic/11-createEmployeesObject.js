@@ -1,6 +1,6 @@
 export default function createEmployeesObject(departmentName, employees) {
   const data = {
-    [departmentName]: employees
+    [departmentName]: employees,
   };
 
   return data;
