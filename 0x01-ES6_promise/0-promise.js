@@ -5,7 +5,7 @@ export default function getResponseFromAPI() {
     }, 1);
     const state = true;
     if (!state) {
-      reject('error');
+      reject(new Error('error'));
     }
   }));
   return weather;
