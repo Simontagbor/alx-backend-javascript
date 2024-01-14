@@ -3,16 +3,19 @@ export default class Building {
     if (this.constructor !== Building && this.evacuationWarningMessage === undefined) {
       throw new Error('Class extending Building must override evacuationWarningMessage');
     }
-    this._sqft = sqft;
+    this.sqft = sqft;
   }
 
   // getter
   get sqft() {
-    return this._sqft;
+    return this.sqft;
   }
 
   // abstract method
-  evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+  // eslint-disable-next-line class-methods-use-this
+  evacuationWarningMessage(dummy = null) {
+    if (dummy === null) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
   }
 }
